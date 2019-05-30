@@ -38,6 +38,8 @@ Jogo.prototype.contarDados = function(lancamento){
  return contagem;
 }
 
+const GENERALA = { jogo : 'Generala', pontos : 100}
+
 jogo = new Jogo();
 lancamento = jogo.lancarDados();
 contagem = jogo.contarDados(lancamento);
