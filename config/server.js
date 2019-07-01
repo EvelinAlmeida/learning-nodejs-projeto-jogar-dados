@@ -1,6 +1,13 @@
 /* importar o módulo do framework express */
 var express = require('express');
 
+/* importar o módulo body-parser */
+var bodyParser = require('body-parser');
+
+/* o bodyParser facilita a extração de informações de requisições http, subsequentes
+ao uso de formulários */
+
+
 /* importar o módulo consign */
 var consign = require('consign');
 
