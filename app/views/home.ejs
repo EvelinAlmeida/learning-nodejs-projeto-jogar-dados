@@ -1,70 +1,56 @@
 
 <!DOCTYPE html>
-<meta charset="utf-8">
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<title>Projeto Jogar Dados</title>
-	<style type="text/css">
+	<meta charset="utf-8">
+		<html>
+		  <head>
+			<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+			 <title>Projeto Jogar Dados</title>
+			
 
-	</style>
 
-	<script type="text/javascript">
-// Função que lê a cor escolhida pelo usuário em <input type="color"> e altera a formatação CSS
-// do <body id="pagina"> com a cor escolhida.
-function mudar_cor_de_fundo(){
-// lê o valor de cor escolhido pelo usuário.
-var cor = document.getElementById("seletor_de_cores").value;
-// muda a formatação CSS do <body> background para a cor escolhida
-document.getElementById("pagina").style.backgroundColor = cor;
-// opcional: escreve na página a cor escolhida
-document.getElementById("cor_escolhida").innerHTML = "A Cor escolhida é "+cor;
-}
-</script>
+		  </head>
+<body>
 
-</head>
-<body id="pagina">
-
-<main>
+	<main>
 
 		<div class="container col-12 col-sm col-md-6 bg-light p-2 text-center">
 
-		<h1>Projeto Jogar Dados</h1>
-	
+			<h1>Projeto Jogar Dados</h1>
+			
+				<form method="post" action="iniciar">
+					<h2>Digite seus dados!</h2>
 
-		
-		<form method="post" action="iniciar">
+				<div class="form-group">
+					<input type="text" name="nome" placeholder="Nome" class="form-control">
+				</div>
 
-			</br></br>
-		
-		<b>Que cor você deseja? </b></br></br>
+				<div class="form-group">
+					<input type="text"  name="sobrenome" placeholder="Sobrenome" class="form-control"> 
+                </div>
+                 <h3>Escolha um cor de Fundo!</h3>
+
+                 <div class="form-group">
+                 <input type="color" name="cor" value="#ff0000">
+                 </div>
+
+             
+				  <button type="submit" id="buttonComecar" class="btn btn-success"> Começar</button>
+
+		        </div>  
 
 
-<p>Escolha uma cor para o fundo da página</p>
-<input id="seletor_de_cores" type="color"/><br><br>
-<button type="button" onclick="mudar_cor_de_fundo()"  class="btn btn-success">Mudar a cor</button>
+	            </form>
+	</main>
 
-<p id="cor_escolhida"></p>
-
-
-		
-		<button type="submit" id="buttonComecar" class="btn btn-dark" > Começar</button>
-        </div>    
-</form>
-</main>
 </body>
-		<script src='js/jquery-3.4.1.min.js'></script>
+
+	<script src='js/jquery-3.4.1.min.js'></script>
 		<script type="text/javascript">
-
-		$(document).ready(function(){
-
-		$('#buttonComecar').click(function(){
-         location.href = 'iniciar';
-	    });
-	});
-		</script>
-
-
-
+		 $(document).ready(function(){
+            $('#buttonComecar').click(function(){
+		       location.href = 'iniciar';
+			    });
+			});
+	</script>
 
 </html>

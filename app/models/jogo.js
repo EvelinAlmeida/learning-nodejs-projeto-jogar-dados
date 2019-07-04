@@ -2,6 +2,9 @@ function Jogo(nome, sobrenome, cor, dados = 5, lados = 6){
 	console.log('model: executar contructor de jogo');
 	this.dados = dados;
 	this.lados = lados;
+	this.nome = nome;
+	this.sobrenome = sobrenome;
+	this.cor = cor;
 	this.pontos = 0;
 	this.n = 0;
 }
@@ -71,7 +74,10 @@ Jogo.prototype.novoLancamento = function(){
 		nLancamentos : this.n,
 		lancamento : lancamento,
 		jogoLancamento : analisarLancamento.jogo,
-		pontosLancamento : analisarLancamento.pontos
+		pontosLancamento : analisarLancamento.pontos,
+		nome : this.nome,
+		sobrenome: this.sobrenome,
+		cor : this.cor
 	};
 
 	return resultado;

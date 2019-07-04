@@ -1,64 +1,68 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Projeto Jogar Dados</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">	
-	<script type="text/javascript">
-// Função que lê a cor escolhida pelo usuário em <input type="color"> e altera a formatação CSS
-// do <body id="pagina"> com a cor escolhida.
-function mudar_cor_de_fundo(){
-// lê o valor de cor escolhido pelo usuário.
-var cor = document.getElementById("seletor_de_cores").value;
-// muda a formatação CSS do <body> background para a cor escolhida
-document.getElementById("pagina").style.backgroundColor = cor;
-// opcional: escreve na página a cor escolhida
-document.getElementById("cor_escolhida").innerHTML = "A Cor escolhida é "+cor;
-}
-</script>
-</head>
-<body id="pagina">
-	<main>
-		<div class="container col-12 col-sm col-md-6 bg-light p-2 text-center">
-			<h1>Projeto Jogar Dados</h1>
-		
-			<div class="container">
+   <html>
+      <head>
+	     <title>Projeto Jogar Dados</title>
+	         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	         <style type="text/css">
+	         	
+	         	body{
+	         		background-color:  <%= cor %>;
+	         	}
+	         </style>
+      </head> 
 
-				<div class="card-deck my-2">
+<body>
+	
+	<main>
+		
+		<div class="container col-12 col-sm col-md-6 bg-light p-2 text-center">
+
+			<h1>Projeto Jogar Dados</h1>
+
+			<%= nome %> <%= sobrenome %> 
+		
+			   <div class="container">
+
+				 <div class="card-deck my-2">
 
 					<div class="col-6 p-4">
 
 						<div class="card">
 
-							<div class="card-header">Pontuação acumulada</div>
-							<div class="card-body"><%= pontosAcumulados %></div>
+						   <div class="card-header">Pontuação acumulada</div>
+						   <div class="card-body"><%= pontosAcumulados %></div>
 
 						</div>
+
 					</div>
 
-					<div class="col-6 p-4">
+			<div class="col-6 p-4">
 
-						<div class="card">
+				<div class="card">
 
 							<div class="card-header">Número de lançamentos</div>
 							<div class="card-body"><%= nLancamentos %></div>
+
 						</div>
-					</div>
 
-					<div class="col-12 p-3">
+				</div>
 
-						
+				<div class="col-12 p-3">
+
 						<div class="card">
 							
 							<div class="card-header">Lançamento</div>
 							<div class="card-body">
 
 								<% for(var i=0; i < lancamento.length; i++){ %>
-									<img src="img/dado<%=lancamento[i]%>.png" class="p-2 col-3 col-sm-2">
+				                <img src="img/dado<%=lancamento[i]%>.png" class="p-2 col-3 col-sm-2">
 								<% } %>
 									
 							</div>
+
 						</div>
-					</div>
+
+				</div>
 
 					<div class="col-6 p-3">
 
@@ -66,8 +70,10 @@ document.getElementById("cor_escolhida").innerHTML = "A Cor escolhida é "+cor;
 							
 							<div class="card-header">jogo Lançamento atual</div>
 							<div class="card-body"><%= jogoLancamento %></div>
+
 						</div>
-					</div>
+
+				</div>
 
 					<div class="col-6 p-3">
 
@@ -75,10 +81,13 @@ document.getElementById("cor_escolhida").innerHTML = "A Cor escolhida é "+cor;
 							
 							<div class="card-header">Pontuação Lançamento</div>
 							<div class="card-body"><%= pontosLancamento %></div>
-						</div>
+
+						 </div>
+
 					</div>
 
 				</div>
+
 			</div>
 
 			
@@ -86,30 +95,27 @@ document.getElementById("cor_escolhida").innerHTML = "A Cor escolhida é "+cor;
 			<div class="col-12 mx-auto mt-2 px-4">
 
 				<button type="button" class="btn btn-success btn-block" id="buttonLancarDados">Lançar dados</button>
+
 			</div>
-
-			<p>Escolha uma cor para o fundo da página</p>
-<input id="seletor_de_cores" type="color"/><br><br>
-<button type="button" onclick="mudar_cor_de_fundo()"  class="btn btn-success">Mudar a cor</button>
-
-<p id="cor_escolhida"></p>
 
 			<div class="col-6 mx-auto p-4">
 
 				<button type="button" class="btn btn-warning btn-block" id="buttonReiniciarJogo">Reiniciar</button>
-			</div>
-
-			<div class="col-6 mx-auto p-4">
-
 				<button type="button" class="btn btn-danger btn-block" id="buttonEncerraJogo">Encerrar</button>
+
 			</div>
+
 		</div>
+
 	</main>
+
 </body>
+
 
 <script src="js/jquery-3.4.1.min.js"></script>
 
 <script type="text/javascript">
+	
 	$(document) . ready(function(){
 		$("#buttonLancarDados").click(
 			function(){

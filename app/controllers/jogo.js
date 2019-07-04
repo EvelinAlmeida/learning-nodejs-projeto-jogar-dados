@@ -13,10 +13,14 @@ var jogoModel = undefined;
 module.exports.iniciar = function (application, req, res){
 	console.log('controller: iniciar');
 	console.log('controller: cria instância de jogo');
-	jogoModel = new application.app.models.jogo.Jogo();
+	console.log(req.body);
+	nome = req.body.nome;
+	sobrenome = req.body.sobrenome;
+	cor = req.body.cor;
+	jogoModel = new application.app.models.jogo.Jogo(nome, sobrenome, cor);
 	
 	console.log('controller: atualiza view - novoJogo');
-	res.render('novoJogo');
+	res.render('novoJogo', {cor:jogoModel.cor});
 }
 
 module.exports.novoLancamento = function(application, req, res){

@@ -25,11 +25,5 @@ module.exports = function(application){
     	console.log('routes: /encerrar');        
         application.app.controllers.jogo.encerrar(application, req, res);
     });
-     application.get('/nome', function(req,res){
-    	console.log('routes: /nome');        
-        application.app.controllers.jogo.nome(application, req, res);
-    });
-     application.get('/sobrenome', function(req,res){
-    	console.log('routes: /sobrenome');        
-        application.app.controllers.jogo.sobrenome(application, req, res);
-    });}
+}
+     

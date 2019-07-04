@@ -22,7 +22,7 @@ app.set('views', './app/views' );
 
 /* configurar o middleware express.static que diz onde estão os objetos estáticos */
 app.use(express.static('./app/public'));
-
+app.use(bodyParser.urlencoded({extended: true}))
 /* Uma especie de autoload do PHP */
 consign()
 	.include('./app/routes')
